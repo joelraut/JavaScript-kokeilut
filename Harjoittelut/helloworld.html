@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Sivun otsikko</h1>
+
+<script defer>
+    'use strict'
+
+    let kelvin, celsius;
+    const muuntoarvo  = -273.15
+    kelvin = parseFloat(prompt("Anna lämpötila Kelvin-asteina"));
+    celsius = kelvin + muuntoarvo
+
+    console.log(kelvin + "Kelvin-astetta on" + celsius.toFixed(4) + "Celsius-astetta")
+
+</script>
+</body>
+</html>

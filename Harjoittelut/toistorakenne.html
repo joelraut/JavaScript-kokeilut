@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Sivun otsikko</h1>
+
+<script defer>
+    'use strict'
+
+    let oikealuku;
+    let arvattuluku, uusi;
+    // console.log(oikealuku);
+
+
+
+
+do {
+  let oikealuku = Math.floor(Math.random())*10+1;
+  do {
+    arvattuluku = parseInt(prompt("Arvaa kokonaisluku (0 - 10)."));
+
+    if (arvattuluku > oikealuku) {
+      console.log("Antamasi luku oli liian suuri.");
+    } else if (arvattuluku < oikealuku) {
+      console.log("Arvauksesi oli liian pieni.");
+    } else {
+      console.log("Onneksi olkoon! Arvuksesi oli oikein!");
+    }
+  } while (arvattuluku !== oikealuku);
+
+  uusi = prompt("haluatko uuden pelin (k/e)?");
+} while(uusi ==="k");
+
+</script>
+</body>
+</html>

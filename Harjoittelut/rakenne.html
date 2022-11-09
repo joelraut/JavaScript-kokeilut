@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Sivun otsikko</h1>
+
+<script defer>
+    'use strict'
+    const henkilö = prompt("Oletko (O)piskleija,(H)enkilökunnan jäsen vai (M)uu asiakas?");
+    const asiakastyyppi =vastaus.toLowerCase();
+    let lounaanHinta = -1.0
+
+    switch(asiakastyyppi){
+      case 'o':
+        lounaanHinta = 3.20;
+        break;
+      case 'h':
+        lounaanHinta = 6.10;
+        break;
+      case 'm':
+        lounaanHinta = 8.95;
+        break;
+      default:
+        alert("Syötit virheellisen asiakastyypin. Käynnistä ohjelma uudelleen.");
+    }
+    if (lounaanHinta >= 0 ) {
+      console.log('Lounaasi maksaa ${lounaanHinta}')
+    }
+
+</script>
+</body>
+</html>
