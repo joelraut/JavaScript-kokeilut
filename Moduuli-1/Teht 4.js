@@ -1,7 +1,7 @@
 'use strict';
 const name = prompt('What is your name?')
 
-const numero = (Math.floor(Math.random() * 3) + 1;
+const numero = (Math.floor(Math.random() * 3)) + 1;
 
 if (numero === 1) {
   const Gryffindor = 'Gryffindor';
