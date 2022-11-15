@@ -1,17 +1,19 @@
 'use strict';
-var times = prompt('How many times would you like to roll the dice');
 
-var rollDice = function () {
 
-  var dice = Math.floor(Math.random() * times + 1);
+var rollDice = function (side) {
+
+  var dice = Math.floor(Math.random() * side + 1);
   return dice;
 
 }
 
 var dices = []
 
+var sides = prompt('How many times would you like to roll the dice');
+var sidess = rollDice(sides)
+while(rollDice() !== sidess){
 
-while(rollDice() !== times){
   dices.push(rollDice())
 }
 
