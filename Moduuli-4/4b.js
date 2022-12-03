@@ -12,16 +12,24 @@ lomake.addEventListener('submit', async function(evt) {
   }
 
   const sarjat = await vastaus.json();
-  console.log(sarjat)
+
   const nimi = sarjat.map(element => {
     return `
-<div class ="kuva">
+
+<div class="divit">
+
+
 <article>
- <figure> 
- <img scr="${element.show.image.medium} alt= 'kuva' "> 
+<figure>
+<p>${element.show.name}</p>
+<img class="kuva1" src="${element.show.image.medium}">
  </figure>
+ <p>${element.show.summary}</p>
   </article>
-  </div>`;
+  
+  </div>
+ 
+  `;
 
   }).join("");
   console.log(nimi)

@@ -1,13 +1,54 @@
+body{
+    background-color: darkolivegreen;
+}
 h1 {
     text-align: center;
 }
 form {
     text-align: center;
 }
-figure {
- position: center;
+article {
+      position: center;
+  width: 20%;
+
+    box-sizing: border-box;
+    background-color: beige;
+    flex-wrap: wrap;
+    margin-top: 58.45px;
+    margin-bottom: 58.45px;
+    margin-left: 0px;
+    margin-right: 10px;
+
+}
+
+.kuva {'
+  float: left
+  width: 31%;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: beige;
+    flex-wrap: wrap;
+    margin: 6px;'
+
+}
+
+.kuva1{
+     width: 100%;
+
+}
+
+.figure{
+   position: center;
     margin: 0 3rem 3rem 0;
     border-radius: 8px 8px 0 0;
     width: 100%;
     height: auto;
+
+}
+
+.divi{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 8px;
 }
