@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+}
+form {
+    text-align: center;
+}
+figure {
+ position: center;
+    margin: 0 3rem 3rem 0;
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    height: auto;
+}
