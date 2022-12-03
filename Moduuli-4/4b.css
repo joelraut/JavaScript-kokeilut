@@ -4,25 +4,30 @@ body{
 h1 {
     text-align: center;
 }
+section{
+
+}
 form {
     text-align: center;
 }
-article {
-      position: center;
+article{
+    position: center;
   width: 20%;
-
+    padding: 1rem;
     box-sizing: border-box;
     background-color: beige;
     flex-wrap: wrap;
-    margin-top: 58.45px;
-    margin-bottom: 58.45px;
-    margin-left: 0px;
-    margin-right: 10px;
-
+    margin: 1px;
 }
 
+figure{
+    position: center;
+    margin: 0 3rem 3rem 0;
+    border-radius: 8px 8px 0 0;
+    width: 100%;
+    height: auto;
 .kuva {'
-  float: left
+  float: center
   width: 31%;
     padding: 1rem;
     box-sizing: border-box;
@@ -37,18 +42,11 @@ article {
 
 }
 
-.figure{
-   position: center;
-    margin: 0 3rem 3rem 0;
-    border-radius: 8px 8px 0 0;
-    width: 100%;
-    height: auto;
 
-}
 
 .divi{
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 0px;
-    padding-right: 8px;
+    margin-right: 1px;
 }

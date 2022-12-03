@@ -6,37 +6,50 @@ lomake.addEventListener('submit', async function(evt) {
   evt.preventDefault();
   const hakusana = document.querySelector('#query').value;
 
+  function resetElems() {
+  $(".resetable").html("");
+}
+resetElems()
+
   const vastaus = await fetch(apiUrl + hakusana);
   if (!vastaus.ok) {
     throw new Error(vastaus.statusText)
   }
 
   const sarjat = await vastaus.json();
-
+console.log(sarjat)
   const nimi = sarjat.map(element => {
     return `
 
-<div class="divit">
+
 
 
 <article>
 <figure>
-<p>${element.show.name}</p>
+
 <img class="kuva1" src="${element.show.image.medium}">
+<figcaption>${element.show.name}</figcaption>
  </figure>
+ 
  <p>${element.show.summary}</p>
   </article>
-  
-  </div>
+
  
   `;
 
   }).join("");
-  console.log(nimi)
+
 
   document
   .querySelector("#name")
   .insertAdjacentHTML("afterbegin", nimi);
+
+
+
+
+
+
+});
 
 
 //   const nimi = sarjat.map(element => element.show.name);
@@ -56,7 +69,3 @@ lomake.addEventListener('submit', async function(evt) {
 //   element.innerHTML = nimi[i];
 //   nimi.append(element);
 // }
-
-});
-
-
