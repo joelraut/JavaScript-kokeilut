@@ -1,52 +1,98 @@
-body{
-    background-color: darkolivegreen;
-}
-h1 {
-    text-align: center;
-}
-section{
-
-}
-form {
-    text-align: center;
-}
-article{
-    position: center;
-  width: 20%;
-    padding: 1rem;
-    box-sizing: border-box;
-    background-color: beige;
-    flex-wrap: wrap;
-    margin: 1px;
+html {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
-figure{
-    position: center;
-    margin: 0 3rem 3rem 0;
-    border-radius: 8px 8px 0 0;
-    width: 100%;
-    height: auto;
-.kuva {'
-  float: center
-  width: 31%;
-    padding: 1rem;
-    box-sizing: border-box;
-    background-color: beige;
-    flex-wrap: wrap;
-    margin: 6px;'
-
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0ddd5;
 }
 
-.kuva1{
-     width: 100%;
-
+.container {
+  width: 60rem;
+  margin: auto;
 }
 
+header {
+  background-color: #3ea9dd;
+  padding: 1rem;
+  color: #fff;
+}
 
+main {
+  background-color: #fff;
+  padding: 1rem;
+}
 
-.divi{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 0px;
-    margin-right: 1px;
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+article {
+  width: calc(100% / 3 - 2rem);
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 1px #ccc solid;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 3px 6px 6px #ccc;
+  transition: all 0.2s ease-in-out;
+}
+
+article:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 2px #ccc;
+}
+
+article h2 {
+  margin: 0;
+  text-align: center;
+  padding: 0 0 0.5rem 0;
+}
+
+figure {
+  margin: 0;
+  text-align: center;
+}
+
+figure img {
+  width: 100%;
+}
+
+figcaption {
+  text-align: center;
+}
+
+footer {
+  background-color: #3ea9dd;
+  text-align: center;
+  padding: 1rem;
+}
+
+dialog {
+  position: fixed;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  display: block;
+}
+
+dialog[open] {
+  opacity: 1;
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.8);
+}
+
+dialog span {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 2rem;
+  text-decoration: none;
+  color: #fff;
+  filter: drop-shadow(2px 2px 2px #000);
 }

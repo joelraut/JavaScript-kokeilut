@@ -3,19 +3,15 @@ const lomake = document.querySelector('form');
 const apiUrl = 'https://api.tvmaze.com/search/shows?q=';
 
 lomake.addEventListener('submit', async function(evt) {
+
   evt.preventDefault();
   const hakusana = document.querySelector('#query').value;
-
-  function resetElems() {
-  $(".resetable").html("");
-}
-resetElems()
 
   const vastaus = await fetch(apiUrl + hakusana);
   if (!vastaus.ok) {
     throw new Error(vastaus.statusText)
   }
-
+  location.reload();
   const sarjat = await vastaus.json();
 console.log(sarjat)
   const nimi = sarjat.map(element => {
