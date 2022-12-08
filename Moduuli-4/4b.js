@@ -3,6 +3,7 @@ const form = document.querySelector('form');
 const section = document.querySelector('section');
 
 async function fetchjson(url, options = {}){
+  let answer = await fetch(url, options)
   if (!answer.ok){
     throw new Error(answer.statusText);
   }
@@ -25,13 +26,14 @@ form.addEventListener('submit', async function(evt) {
   let title = json[i]['show']['name'];
   const link = json[i]['show']['id'];
 
+
   (json[i]['show']['genres'].length === 0) ?
       genres.innerHTML = '(No genres listed)':
       genres.append(json[i]['show']['genres'].join('/'));
 
-  if (json)[i]['show']['image'] === null) {
+  if (json[i]['show']['image'] === null) {
     img.src ='https://via.placeholder.com/210x295?text=no+image';
-}   else if (json)[i]['show']['image']['medium'] === null){
+}   else if (json[i]['show']['image']['medium'] === null){
     img.src ='https://via.placeholder.com/210x295?text=no+image';
 }   else {
     img.src = (json)[i]['show']['image']['medium'];
@@ -49,17 +51,13 @@ form.addEventListener('submit', async function(evt) {
     dialog.showModal();
     iframe.scr = json [i]['show']['url'];
     });
-    span.addEventListener('click, fucntion(evt') {
+    span.addEventListener('click', function(evt) {
       evt.preventDefault();
       dialog.close()
-    }
-  })
-
-
-
-
-
+    })
   }
+
+});
 
 
 
