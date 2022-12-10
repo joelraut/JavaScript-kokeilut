@@ -14,7 +14,7 @@ body {
 }
 
 header {
-  background-color: #3ea9dd;
+  background-color: #f0ddd5;
   padding: 1rem;
   color: #fff;
 }
@@ -67,9 +67,10 @@ figcaption {
 }
 
 footer {
-  background-color: #3ea9dd;
+
   text-align: center;
   padding: 1rem;
+  background-color: #f0ddd5;
 }
 
 dialog {
@@ -95,4 +96,21 @@ dialog span {
   text-decoration: none;
   color: #fff;
   filter: drop-shadow(2px 2px 2px #000);
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+form{
+  text-align: center;
+}
+
+input {
+  filter: drop-shadow(2px 2px 2px #000);
+  top: 1rem;
+  right: 2rem;
+  font-size: 2rem;
+  background-color: #f0ddd5;
+
 }

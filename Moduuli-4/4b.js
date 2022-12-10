@@ -28,7 +28,7 @@ form.addEventListener('submit', async function(evt) {
     let title = json[i]['show']['name'];
     console.log(title)
     const link = json[i]['show']['id'];
-    section.appendChild(article)
+
 
 
 
@@ -38,14 +38,13 @@ form.addEventListener('submit', async function(evt) {
       genres.append(json[i]['show']['genres'].join('/'));
 
     if (json[i]['show']['image'] === null) {
-    img.src ='https://via.placeholder.com/210x295?text=no+image';
-
-    }   else if (json[i]['show']['image']['medium'] === null){
-    img.src ='https://via.placeholder.com/210x295?text=no+image';
-    }   else {
-    img.src = (json)[i]['show']['image']['medium'];
-    }
-    img.alt='picture';
+      img.src ='https://via.placeholder.com/210x295?text=no+image';
+      } else if (json[i]['show']['image']['medium'] === null){
+          img.src ='https://via.placeholder.com/210x295?text=no+image';
+      }else {
+          img.src = (json)[i]['show']['image']['medium'];
+      }
+       img.alt='picture';
 
 
 
@@ -53,7 +52,7 @@ form.addEventListener('submit', async function(evt) {
     article.innerHTML += `<h2>${title}</h2>`;
     article.append(genres);
     article.appendChild(img);
-    article.innerHTML += `<a href="https://www.tvmaze.com/shows/${link}"> Link.</a>`;
+    article.innerHTML += `<a href="https://www.tvmaze.com/shows/${link}"> Link</a>`;
     article.innerHTML += json[i]['show']['summary'];
     article.appendChild(button);
     section.appendChild(article);
@@ -67,10 +66,12 @@ form.addEventListener('submit', async function(evt) {
     button.addEventListener('click', function(evt){
       evt.preventDefault();
       dialog.showModal();
-    iframe.scr = json [i]['show']['url'];
+      iframe.scr = json [i]['show']['url'];
+      document.getElementById('frame').src();
     });
+
     window.onload=function(){
-    span.addEventListener('click', function(evt) {
+    span.addEventListener('click',  function(evt) {
       evt.preventDefault();
       dialog.close()
     })
