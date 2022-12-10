@@ -17,25 +17,27 @@ form.addEventListener('submit', async function(evt) {
   const q = document.querySelector('#query').value;
   const search = 'https://api.tvmaze.com/search/shows?q='+ q;
   const json = await fetchjson(search);
+  console.log(search)
 
   for (let i in json){
-  const article = document.createElement('article');
-  const img = document.createElement('img');
-  const genres = document.createElement('p')
-  const button = document.createElement('button');
-  let title = json[i]['show']['name'];
-  const link = json[i]['show']['id'];
+    const article = document.createElement('article');
+    const img = document.createElement('img');
+    const genres = document.createElement('p')
+    const button = document.createElement('button');
+    let title = json[i]['show']['name'];
+    const link = json[i]['show']['id'];
 
 
-  (json[i]['show']['genres'].length === 0) ?
+
+    (json[i]['show']['genres'].length === 0) ?
       genres.innerHTML = '(No genres listed)':
       genres.append(json[i]['show']['genres'].join('/'));
 
-  if (json[i]['show']['image'] === null) {
+    if (json[i]['show']['image'] === null) {
     img.src ='https://via.placeholder.com/210x295?text=no+image';
-}   else if (json[i]['show']['image']['medium'] === null){
+    }   else if (json[i]['show']['image']['medium'] === null){
     img.src ='https://via.placeholder.com/210x295?text=no+image';
-}   else {
+    }   else {
     img.src = (json)[i]['show']['image']['medium'];
     }
     img.alt='picture';
@@ -48,16 +50,17 @@ form.addEventListener('submit', async function(evt) {
 
     button.addEventListener('click', function(evt){
       evt.preventDefault();
-    dialog.showModal();
+      dialog.showModal();
     iframe.scr = json [i]['show']['url'];
     });
+    window.onload=function(){
     span.addEventListener('click', function(evt) {
       evt.preventDefault();
       dialog.close()
     })
   }
 
-});
+}});
 
 
 
