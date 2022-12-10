@@ -18,6 +18,7 @@ form.addEventListener('submit', async function(evt) {
   const search = 'https://api.tvmaze.com/search/shows?q='+ q;
   const json = await fetchjson(search);
   console.log(search)
+  console.log(json)
 
   for (let i in json){
     const article = document.createElement('article');
@@ -25,7 +26,10 @@ form.addEventListener('submit', async function(evt) {
     const genres = document.createElement('p')
     const button = document.createElement('button');
     let title = json[i]['show']['name'];
+    console.log(title)
     const link = json[i]['show']['id'];
+    section.appendChild(article)
+
 
 
 
@@ -35,6 +39,7 @@ form.addEventListener('submit', async function(evt) {
 
     if (json[i]['show']['image'] === null) {
     img.src ='https://via.placeholder.com/210x295?text=no+image';
+
     }   else if (json[i]['show']['image']['medium'] === null){
     img.src ='https://via.placeholder.com/210x295?text=no+image';
     }   else {
@@ -42,7 +47,18 @@ form.addEventListener('submit', async function(evt) {
     }
     img.alt='picture';
 
+
+
+
     article.innerHTML += `<h2>${title}</h2>`;
+    article.append(genres);
+    article.appendChild(img);
+    article.innerHTML += `<a href="https://www.tvmaze.com/shows/${link}"> Link.</a>`;
+    article.innerHTML += json[i]['show']['summary'];
+    article.appendChild(button);
+    section.appendChild(article);
+
+    button.setAttribute('type', 'button');
     button.append('info modal');
     const iframe = document.querySelector('iframe');
     const dialog = document.querySelector('dialog');
@@ -58,6 +74,9 @@ form.addEventListener('submit', async function(evt) {
       evt.preventDefault();
       dialog.close()
     })
+
+
+
   }
 
 }});
